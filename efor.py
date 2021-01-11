@@ -49,20 +49,7 @@ new_headers['Content-Length'] = str(len(json.dumps(payload)))
 new_headers['Date'] = headers["date"] 
 new_headers['Cookie'] =cookie
 new_headers['X-CSRF-TOKEN']= payload['csrf-token'] 
-
-headers['Accept-Encoding'] = 'gzip, deflate'
-headers['Accept-Language'] = 'tr-TR,tr;q=0.9,en-US;q=0.8,en;q=0.7,ru;q=0.6'
-
-headers['Host']='avicenna.datasel.com.tr'
-headers['Origin']='http://avicenna.datasel.com.tr'
-headers['Referer'] = 'http://avicenna.datasel.com.tr/login'
-headers['User-Agent']='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36'
-headers['Cookie'] =cookie
-
  
-#Content-Length: 251 
-print(new_headers)
-print(payload)
 login_request =  requests.post('http://avicenna.datasel.com.tr/login', data=json.dumps(payload), headers = new_headers)
 
 print(login_request) 
